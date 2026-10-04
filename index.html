@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Para Jz 💙</title>
+  <meta name="description" content="Una cartita hecha con cariño.">
+  <meta name="theme-color" content="#0F1E4D">
+
+  <link rel="preload" as="image" href="assets/portada-poster.jpg">
+  <link rel="preload" as="image" href="assets/interior.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Degradados compartidos por todos los SVG de la página -->
+  <svg class="defs-globales" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-metal" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#7d9bf5"/>
+        <stop offset=".35" stop-color="#3A62D9"/>
+        <stop offset=".6" stop-color="#1F3FA6"/>
+        <stop offset="1" stop-color="#0F1E4D"/>
+      </linearGradient>
+      <linearGradient id="g-perla" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffffff"/>
+        <stop offset=".5" stop-color="#eef1fa"/>
+        <stop offset="1" stop-color="#c3cce6"/>
+      </linearGradient>
+      <linearGradient id="g-noche" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#3550a8"/>
+        <stop offset=".5" stop-color="#0F1E4D"/>
+        <stop offset="1" stop-color="#070f2b"/>
+      </linearGradient>
+      <linearGradient id="g-brillo" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#a9bfff"/>
+        <stop offset=".5" stop-color="#3A62D9"/>
+        <stop offset="1" stop-color="#1F3FA6"/>
+      </linearGradient>
+      <linearGradient id="g-vidrio" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#eef3ff"/>
+        <stop offset="1" stop-color="#6f8ad6"/>
+      </linearGradient>
+      <linearGradient id="g-satin" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#2546b3"/>
+        <stop offset=".28" stop-color="#6385f2"/>
+        <stop offset=".5" stop-color="#1F3FA6"/>
+        <stop offset=".82" stop-color="#0F1E4D"/>
+        <stop offset="1" stop-color="#1F3FA6"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <canvas id="petalos" class="petalos" aria-hidden="true"></canvas>
+
+  <main class="pagina">
+    <section class="escena" aria-label="Carta para Jz">
+      <div class="escenario" id="escenario">
+        <div class="sombra-carta" aria-hidden="true"></div>
+        <div class="flotador">
+          <div class="carta" id="carta">
+
+            <!-- PANEL CENTRAL (interior: 540–1620 px del archivo) -->
+            <article class="panel-centro papel" aria-labelledby="alt-centro">
+              <div class="interior interior-centro" data-zona="centro"></div>
+              <p class="solo-lector" id="alt-centro" data-c="altCentro"></p>
+            </article>
+
+            <!-- SOLAPA IZQUIERDA -->
+            <div class="solapa izq">
+              <div class="cara frente">
+                <div class="portada portada-izq">
+                  <div class="capa-media"></div>
+                  <p class="rotulo" aria-hidden="true" data-c="rotuloPortada">para Jz 💙</p>
+                </div>
+              </div>
+              <div class="cara dorso papel">
+                <!-- interior: 0–540 px del archivo -->
+                <div class="interior interior-izq" data-zona="izq"></div>
+                <span class="pliegue" aria-hidden="true"></span>
+                <article class="panel-texto" id="panel-izq" tabindex="-1" aria-labelledby="alt-izq">
+                  <p class="solo-lector" id="alt-izq" data-c="altIzquierdo"></p>
+                </article>
+              </div>
+            </div>
+
+            <!-- SOLAPA DERECHA -->
+            <div class="solapa der">
+              <div class="cara frente">
+                <div class="portada portada-der">
+                  <div class="capa-media"></div>
+                  <p class="rotulo" aria-hidden="true" data-c="rotuloPortada">para Jz 💙</p>
+                </div>
+              </div>
+              <div class="cara dorso papel">
+                <!-- interior: 1620–2160 px del archivo -->
+                <div class="interior interior-der" data-zona="der"></div>
+                <span class="pliegue" aria-hidden="true"></span>
+                <article class="panel-texto" aria-labelledby="alt-der">
+                  <p class="solo-lector" id="alt-der" data-c="altDerecho"></p>
+                </article>
+              </div>
+            </div>
+
+            <!-- Botón que cubre la carta cerrada, con el lazo -->
+            <button class="abrir" id="abrir" type="button" aria-expanded="false" aria-controls="carta"
+                    aria-label="Abrir la carta para Jz">
+              <svg class="lazo" viewBox="0 0 200 300" aria-hidden="true" focusable="false">
+                <g class="cinta cinta-izq">
+                  <rect x="-2" y="139" width="104" height="22" fill="url(#g-satin)"/>
+                  <rect x="-2" y="142.5" width="104" height="1.6" fill="#fff" opacity=".28"/>
+                </g>
+                <g class="cinta cinta-der">
+                  <rect x="98" y="139" width="104" height="22" fill="url(#g-satin)"/>
+                  <rect x="98" y="142.5" width="104" height="1.6" fill="#fff" opacity=".28"/>
+                </g>
+                <g class="mono">
+                  <path d="M97 156 C92 170 86 182 79 197 L88 192.5 L92 202 C96 187 100 172 103 158 Z" fill="url(#g-satin)"/>
+                  <path d="M103 156 C108 170 114 182 121 197 L112 192.5 L108 202 C104 187 100 172 97 158 Z" fill="url(#g-satin)"/>
+                  <path d="M100 150 C86 125 54 123 55 144 C56 165 85 164 100 150 Z" fill="url(#g-satin)"/>
+                  <path d="M100 150 C114 125 146 123 145 144 C144 165 115 164 100 150 Z" fill="url(#g-satin)"/>
+                  <path d="M95 148 C85 136 68 134 66 145" fill="none" stroke="#0F1E4D" stroke-opacity=".4" stroke-width="2"/>
+                  <path d="M105 148 C115 136 132 134 134 145" fill="none" stroke="#0F1E4D" stroke-opacity=".4" stroke-width="2"/>
+                  <path d="M66 135 C75 130 86 133 93 142" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.4" stroke-linecap="round"/>
+                  <path d="M134 135 C125 130 114 133 107 142" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.4" stroke-linecap="round"/>
+                  <rect x="90.5" y="140.5" width="19" height="19" rx="6.5" fill="url(#g-satin)" stroke="#0F1E4D" stroke-opacity=".35"/>
+                  <path d="M94 145 C97 143 103 143 106 145" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.3" stroke-linecap="round"/>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="pista-abrir" id="pista-abrir" data-c="pistaAbrir">toca para abrir 💙</p>
+    </section>
+
+    <!-- COSITAS EXTRA -->
+    <section class="extras" id="extras" hidden aria-label="Cositas extra">
+
+      <section class="bloque papel garaje" aria-labelledby="t-garaje">
+        <h2 id="t-garaje" data-c="tituloGaraje">Garaje de razones</h2>
+        <p class="sub" data-c="subGaraje">toca cada carrito 🏎️</p>
+        <div class="repisa" id="repisa"></div>
+        <div class="tarjetita" id="tarjetita" aria-live="polite" hidden>
+          <p class="num" id="tarjetita-num"></p>
+          <p class="txt" id="tarjetita-txt"></p>
+        </div>
+        <p class="progreso" id="progreso"></p>
+      </section>
+
+      <section class="bloque papel" aria-labelledby="t-licencia">
+        <h2 id="t-licencia" data-c="tituloLicencia">Licencia de conducir de mi corazón</h2>
+        <div class="licencia">
+          <div class="lic-cabecera">
+            <span class="lic-pais" data-c="licenciaPais">República de mi Corazón</span>
+            <span class="banderitas" data-banderas="pe ec"></span>
+            <strong>LICENCIA DE CONDUCIR</strong>
+          </div>
+          <div class="lic-cuerpo">
+            <div class="lic-foto" id="lic-foto-caja">
+              <img id="lic-foto" alt="" width="300" height="400">
+            </div>
+            <dl class="lic-datos">
+              <dt>Nombre</dt><dd data-c="nombre">Jz</dd>
+              <dt>Categoría</dt><dd data-c="licenciaCategoria">piloto oficial de mi corazón</dd>
+              <dt>Fecha de emisión</dt><dd id="lic-emision"></dd>
+              <dt>Vigencia</dt><dd data-c="licenciaVigencia">para siempre</dd>
+            </dl>
+          </div>
+          <div class="lic-pie">
+            <div>
+              <span class="lic-etq">N.°</span> <span data-c="licenciaNumero">JZ-💙-∞</span>
+            </div>
+            <div class="lic-firma">
+              <span class="lic-etq">Expedida por</span>
+              <span class="lic-firma-nombre" data-c="firma">Tu nombre</span>
+            </div>
+            <span class="holograma" aria-hidden="true"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bloque papel reloj" aria-labelledby="t-reloj">
+        <h2 id="t-reloj" data-c="tituloReloj">Contador a distancia</h2>
+        <div class="relojes" id="relojes"></div>
+        <p class="diferencia" id="diferencia"></p>
+        <p class="lema" data-c="lemaDistancia">aunque estemos lejos, estamos en la misma pista</p>
+      </section>
+
+      <button class="vuelta" id="vuelta" type="button" data-c="botonFinal">¿una vuelta más? 🏁</button>
+    </section>
+  </main>
+
+  <button class="cerrar-flotante" id="cerrar" type="button" hidden aria-label="Volver a cerrar la carta">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
